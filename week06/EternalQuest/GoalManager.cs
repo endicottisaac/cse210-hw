@@ -124,8 +124,8 @@ public class GoalManager
         }
         else if (goalType == 3)
         {
-            int target = GetPositiveNumber("How many times does this goal need to be accomplished for a bonus? ");
-            int bonus = GetPositiveNumber("What is the bonus for accomplishing it that many times? ");
+            int target = GetPositiveNumber("How many times does this goal need to be accomplished to get the bonus? ");
+            int bonus = GetPositiveNumber("How many points is the bonus worth? ");
             _goals.Add(new ChecklistGoal(name, description, points, target, bonus));
         }
 
@@ -137,7 +137,7 @@ public class GoalManager
     {
         if (_goals.Count == 0)
         {
-            Console.WriteLine("No goals found.");
+            Console.WriteLine("No goals found, lets set some goals. Sooner rather than later.");
             return;
         }
 
@@ -157,7 +157,7 @@ public class GoalManager
         }
         else
         {
-            Console.WriteLine("That goal is already complete, no points awarded.");
+            Console.WriteLine("That goal is already complete, no new points awarded.");
         }
     }
 
